@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Station — Weather Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+
+  <div class="sky" id="sky">
+    <div class="sky-track"></div>
+    <div class="sky-particles" id="skyParticles"></div>
+    <div class="sky-body" id="skyBody"></div>
+    <div class="sky-meta" id="skyMeta">STATION IDLE — SEARCH A CITY TO BEGIN</div>
+  </div>
+
+  <header>
+    <div class="brand">STATION <span>Live Weather Readout</span></div>
+    <form id="searchForm" autocomplete="off">
+      <input type="text" id="cityInput" placeholder="Search a city — e.g. Mysuru, Tokyo, Lagos" />
+      <button class="go" type="submit" id="goBtn">Track</button>
+      <div class="suggestions" id="suggestions" style="display:none;"></div>
+    </form>
+  </header>
+
+  <div id="status"></div>
+
+  <div id="dashboard">
+    <div class="hero">
+      <div class="card hero-main">
+        <div class="place" id="placeName">—<small id="placeMeta">—</small></div>
+        <div class="temp-row">
+          <div class="temp" id="tempValue">--<sup>°</sup></div>
+          <div class="cond" id="condText">—</div>
+        </div>
+        <div class="feels" id="feelsText">—</div>
+      </div>
+      <div class="card hero-icon" id="heroIconWrap"></div>
+    </div>
+
+    <div class="metrics" id="metrics"></div>
+
+    <div class="hourly">
+      <div class="label">Next 12 Hours</div>
+      <div class="hourly-row" id="hourlyRow"></div>
+    </div>
+  </div>
+
+  <footer>Data via Open&#8209;Meteo (open&#8209;meteo.com) — no key required — updated on each search</footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
